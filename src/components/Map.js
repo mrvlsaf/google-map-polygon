@@ -1,6 +1,6 @@
 import { GoogleMap, useLoadScript, Marker, Polygon, Data } from '@react-google-maps/api';
 import { useMemo } from 'react'
-import './Map.css'
+import './index.css'
 import dataJson from '../geojson.json'
 import indiaStates from '../indiaStates.json'
 
@@ -49,7 +49,7 @@ export default function Map() {
         },
         clickable: true,
         draggable: true,
-        editable: false,
+        editable: true,
         fillColor: '#F05',
         fillOpacity: 1,
         strokeColor: '#00FF55',
@@ -63,25 +63,12 @@ export default function Map() {
     if (!isLoaded) return <div>Loading...</div>
     return (
         <GoogleMap
-            zoom={3}
+            zoom={5}
             center={center}
             mapContainerClassName='map-container'
             onClick={onClick}
             onLoad={onMapLoad}
         >
-            {/* <Marker position={center} />
-            <Polygon
-                paths={[innerCoords, outerCoords]}
-                strokeColor="#ff0000"
-                strokeOpacity="1"
-                strokeWeight="2"
-                fillColor="FF0000"
-                fillOpacity="0.35"
-                editable={true}
-                draggable={true}
-                geodesic={true}
-            /> */}
-
             <Data
                 onLoad={onDataLoad}
                 options={dataOptions}

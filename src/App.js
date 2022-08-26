@@ -6,10 +6,8 @@ import {
 } from "react-router-dom";
 import Home from './components/Home';
 import GmapPol from './components/GmapPol';
-// import { useState } from 'react'
 
 function App() {
-  // const [firstName, setFirstName] = useState("first")
 
   return (
     <BrowserRouter>
