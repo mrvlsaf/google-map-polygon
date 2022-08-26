@@ -11,29 +11,16 @@ export default function Map() {
     });
 
     const center = useMemo(() => ({
-        lat: 28.4089,
-        lng: 77.3178
+        lat: 19.7515,
+        lng: 75.7139
     }), []);
 
-    const outerCoords = [
-        { lat: 25.774, lng: -80.19 },
-        { lat: 18.466, lng: -66.118 },
-        { lat: 32.321, lng: -64.757 },
-    ];
-    const innerCoords = [
-        { lat: 28.745, lng: -70.579 },
-        { lat: 29.57, lng: -67.514 },
-        { lat: 27.339, lng: -66.668 },
-    ];
-
     const onMapLoad = (map) => {
+        //sample geojson to load google shaped polygon on Australia
         // map.data.loadGeoJson('https://storage.googleapis.com/mapsdevsite/json/google.json')
         // map.data.addGeoJson(dataJson)
-        map.data.addGeoJson(indiaStates)
-    }
 
-    const onClick = (...args) => {
-        console.log('onClick args: ', args[0].latLng.lat(), ' : ', args[0].latLng.lng())
+        map.data.addGeoJson(indiaStates)
     }
 
     const onDataLoad = data => {
@@ -63,10 +50,9 @@ export default function Map() {
     if (!isLoaded) return <div>Loading...</div>
     return (
         <GoogleMap
-            zoom={5}
+            zoom={4.5}
             center={center}
             mapContainerClassName='map-container'
-            onClick={onClick}
             onLoad={onMapLoad}
         >
             <Data

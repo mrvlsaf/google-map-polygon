@@ -20,6 +20,11 @@
     font-size: 24px;
 }
 
+.navbar span {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
 .form-container {
     background-color: #2e2e4c;
     height: 90vh;
