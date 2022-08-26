@@ -2,6 +2,7 @@ import { GoogleMap, useLoadScript, Marker, Polygon, Data } from '@react-google-m
 import { useMemo } from 'react'
 import './Map.css'
 import dataJson from '../geojson.json'
+import indiaStates from '../indiaStates.json'
 
 export default function Map() {
 
@@ -27,7 +28,8 @@ export default function Map() {
 
     const onMapLoad = (map) => {
         // map.data.loadGeoJson('https://storage.googleapis.com/mapsdevsite/json/google.json')
-        map.data.addGeoJson(dataJson)
+        // map.data.addGeoJson(dataJson)
+        map.data.addGeoJson(indiaStates)
     }
 
     const onClick = (...args) => {
